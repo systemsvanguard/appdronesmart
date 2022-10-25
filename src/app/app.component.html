@@ -1,0 +1,26 @@
+<div>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <a routerLink="/" class="navbar-brand"> 
+	  <img src="./assets/drone_256px.png" alt="DroneSmart Logo" style="width:40px;" class="rounded mx-2"> 
+	  <span class="mx-2">DroneSmart Drones Mart</span> 
+	</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="drones" class="nav-link">Drones</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link">Add</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link">Contact</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>

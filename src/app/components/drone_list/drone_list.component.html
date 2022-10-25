@@ -1,0 +1,44 @@
+<div class="list row">
+  <div class="col-md-10">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Drone Title"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <h4>List of Drones</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let drone of drones; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveDrone(drone, i)"
+      >
+        {{ drone.title }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-outline-danger" (click)="removeAllDrones()" disabled>
+      <i class="bi bi-trash-fill text-danger"></i>
+      Remove ALL Drones
+    </button>
+  </div>
+  <div class="col-md-7">
+    <app-drone_details
+      [viewMode]="true"
+      [currentDrone]="currentDrone"
+    ></app-drone_details>
+  </div>
+</div>

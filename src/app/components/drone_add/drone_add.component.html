@@ -1,0 +1,124 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <h2 class="text-success">Add a New Drone</h2>
+      <br />
+
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          required
+          [(ngModel)]="drone.title"
+          placeholder="Name of Drone"
+        />
+        <label for="title">Name of Drone</label>
+      </div>
+
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          class="form-control"
+          id="brand"
+          name="brand"
+          required
+          [(ngModel)]="drone.brand"
+          placeholder="Brand"
+        />
+        <label for="title">Brand</label>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Price" name="price" id="price" required  [(ngModel)]="drone.price"  />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Amazon ASIN ID" name="asinid" id="asinid" required  [(ngModel)]="drone.asinid"  />
+        </div>
+      </div>
+	  <br />
+
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Rating" name="rating" id="rating" required  [(ngModel)]="drone.rating"  />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Stock Qnty" name="stockqnty" id="stockqnty" required  [(ngModel)]="drone.stockqnty"  />
+        </div>
+      </div>
+
+
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          class="form-control"
+          id="amazon_image"
+          name="amazon_image"
+          required
+          [(ngModel)]="drone.amazon_image"
+          placeholder="Amazon Image"
+        />
+        <label for="amazon_image">Amazon Image</label>
+      </div>
+	  
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          class="form-control"
+          id="amazon_url"
+          name="amazon_url"
+          required
+          [(ngModel)]="drone.amazon_url"
+          placeholder="Amazon URL"
+        />
+        <label for="amazon_url">Amazon URL</label>
+      </div>
+	  
+
+
+
+	  
+
+      <div class="form-group">
+        <label for="synopsis">Synopsis</label>
+        <input
+          class="form-control"
+          id="synopsis"
+          required
+          [(ngModel)]="drone.synopsis"
+          name="synopsis"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="drone.description"
+          name="description"
+        />
+      </div>
+
+      <br />
+	  <button
+        type="button"
+        class="btn btn-success btn-lg"
+        (click)="saveDrone()"
+      >
+        <i class="bi bi-plus-lg text-light"></i>
+        Add New Drone
+      </button>
+      <br /><br />
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Drone was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newDrone()">Add</button>
+    </div>
+  </div>
+</div>
